@@ -5,7 +5,7 @@
 # skips files that already exist
 
 mkdir -p data/
-for year in $(seq 1999 2018); do
+for year in $(seq 1997 2018); do
     
     f=data/neiss$year.tsv
     

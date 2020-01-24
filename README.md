@@ -28,3 +28,14 @@ prefix = 'output'+os.sep+'neiss'
 ## notes
 
 The (un)licence applies to only the code. I do not have any claim to license the data.
+
+### validate the raw data
+
+It can be that some rows have the wrong number of lines. Use a tool like [csvlint](https://github.com/Clever/csvlint) if you want to validate the csv files.
+
+    for f in data/*.tsv; do
+        echo $f
+        awk -F'\t' ' { print NF }' $f | awk '{ total += $1; count++ } END { print total/count " average columns per file"}'
+        ./csvlint -delimiter '\t' $f
+        echo "***********************************\n\n"
+    done

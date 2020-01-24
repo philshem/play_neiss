@@ -2,3 +2,5 @@ output/*.*
 data/*.tsv
 venv
 .vscode
+csvlint*
+validate_csv.sh
